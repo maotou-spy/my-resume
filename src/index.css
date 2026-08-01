@@ -1,0 +1,118 @@
+@import 'tailwindcss';
+
+/* ---------------------------------------------------------
+   Design tokens
+   Preserves the original portfolio's dark, blue-violet identity
+   while refining contrast, spacing, and depth.
+--------------------------------------------------------- */
+@theme {
+  --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-script: 'Caveat', cursive;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+  --color-bg: #0a0e1f;
+  --color-bg-soft: #0f1430;
+  --color-surface: #1a2044;
+  --color-surface-soft: #232a52;
+  --color-border: #2c3468;
+  --color-text: #eef1fb;
+  --color-muted: #a6adce;
+  --color-cyan: #4fbadd;
+  --color-blue: #4ea3d7;
+  --color-violet: #4729bf;
+  --color-violet-light: #6a4bff;
+  --color-mint: #34d399;
+
+  --animate-fade-up: fade-up 0.6s ease both;
+  --animate-blink: blink 1s steps(1) infinite;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+}
+
+/* Light mode overrides. Dark is the site's native identity, so light mode
+   is an explicit opt-in that swaps surface/text tokens while keeping the
+   signature blue-violet accents intact. */
+:root.light {
+  --color-bg: #f6f7fc;
+  --color-bg-soft: #eef0fa;
+  --color-surface: #ffffff;
+  --color-surface-soft: #eef0fa;
+  --color-border: #dde1f2;
+  --color-text: #171b33;
+  --color-muted: #565f88;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg text-text font-body antialiased;
+    background-image:
+      radial-gradient(circle at 12% 8%, rgba(78, 163, 215, 0.12), transparent 40%),
+      radial-gradient(circle at 88% 18%, rgba(71, 41, 191, 0.16), transparent 45%);
+    background-attachment: fixed;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-text;
+  }
+
+  ::selection {
+    background: var(--color-violet-light);
+    color: white;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-cyan);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(90deg, var(--color-blue), var(--color-violet-light));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .btn-gradient {
+    background: linear-gradient(90deg, var(--color-blue), var(--color-violet));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
