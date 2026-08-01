@@ -70,13 +70,15 @@ export function Hero() {
             className="relative"
           >
             <div className="absolute inset-0 -z-10 rounded-full bg-linear-to-br from-blue to-violet-light blur-3xl opacity-30" />
-            <img
-              src={phucPhoto}
-              alt={`Portrait of ${profile.name}`}
-              className="h-56 w-56 rounded-full border-4 border-surface-soft object-cover shadow-2xl sm:h-64 sm:w-64"
-              width={256}
-              height={256}
-            />
+            <div className="h-60 w-60 overflow-hidden rounded-full ring-4 ring-surface-soft shadow-2xl sm:h-72 sm:w-72">
+              <img
+                src={phucPhoto}
+                alt={`Portrait of ${profile.name}`}
+                className="h-full w-full object-cover object-center"
+                width={288}
+                height={288}
+              />
+            </div>
           </motion.div>
 
           <TestRunConsole />

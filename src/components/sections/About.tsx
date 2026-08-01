@@ -13,9 +13,9 @@ export function About() {
       <Container>
         <SectionHeading eyebrow="About" title="About Me" />
 
-        <div className="mt-14 grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
-          <Reveal>
-            <div className="rounded-xl border border-border bg-surface/60 p-6">
+        <div className="mt-14 grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:items-stretch">
+          <Reveal className="flex">
+            <div className="flex h-full flex-col justify-center border-l-2 border-cyan/50 pl-6">
               <h3 className="text-xl font-bold text-text">{profile.education.degree}</h3>
               <p className="mt-2 italic text-muted">
                 {profile.education.school} | {profile.education.period}

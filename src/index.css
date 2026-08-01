@@ -116,3 +116,39 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* ---------------------------------------------------------
+   Auto-hiding scrollbar. Invisible at rest, fades in only
+   while the page is actively being scrolled (see
+   useScrollbarAutoHide, which toggles html.scrolling).
+--------------------------------------------------------- */
+html {
+  scrollbar-width: none;
+}
+
+html.scrolling {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 999px;
+  transition: background-color 0.4s ease;
+}
+
+html.scrolling::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+}
+
+html.scrolling::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-violet-light);
+}
