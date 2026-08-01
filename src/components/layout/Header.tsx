@@ -32,7 +32,8 @@ export function Header({ onOpenMenu }: HeaderProps) {
       <Container className="flex h-20 items-center justify-between">
         <a
           href="#home"
-          className="font-script text-3xl italic text-cyan"
+          style={{ fontFamily: "'Satisfy', cursive" }}
+          className="inline-block px-1 text-3xl font-bold italic bg-linear-to-r from-blue via-50% to-violet-light bg-clip-text text-transparent"
           aria-label={`${profile.wordmark} — back to top`}
         >
           {profile.wordmark}

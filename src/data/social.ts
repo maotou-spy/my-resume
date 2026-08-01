@@ -4,7 +4,7 @@ export const contactInfo = {
   address: 'Ho Chi Minh City, Vietnam',
   phoneNumber: '(+84) 94.505.5293',
   email: 'phucbui.workstation@gmail.com',
-  linkedinUrl: 'https://www.linkedin.com/in/yemufu',
+  linkedinUrl: 'https://www.linkedin.com/in/phucbh',
   githubUrl: 'https://github.com/maotou-spy',
 } as const;
 
@@ -16,6 +16,6 @@ export const socialLinks: SocialLink[] = [
     icon: 'phone',
   },
   { label: contactInfo.email, href: `mailto:${contactInfo.email}`, icon: 'email' },
-  { label: 'linkedin.com/in/yemufu', href: contactInfo.linkedinUrl, icon: 'linkedin' },
+  { label: 'linkedin.com/in/phucbh', href: contactInfo.linkedinUrl, icon: 'linkedin' },
   { label: 'github.com/maotou-spy', href: contactInfo.githubUrl, icon: 'github' },
 ];

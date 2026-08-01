@@ -4,7 +4,7 @@ import s4bt from '@/assets/images/s4bt-logo.png';
 import tsb from '@/assets/images/tsb-logo.png';
 import fptSoftware from '@/assets/images/fpt-software-logo.png';
 import bai from '@/assets/images/bai-project.png';
-import lumos from '@/assets/images/lumos-project.jpg';
+import lumos from '@/assets/images/lumos-project.png';
 
 export const workExperience: ExperienceItem[] = [
   {

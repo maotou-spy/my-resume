@@ -1,10 +1,10 @@
 import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { AppRoutes } from '@/routes';
-import { useScrollbarAutoHide } from '@/hooks/useScrollbarAutoHide';
+// import { useScrollbarAutoHide } from '@/hooks/useScrollbarAutoHide';
 
 function App() {
-  useScrollbarAutoHide();
+  // useScrollbarAutoHide();
 
   return (
     <HelmetProvider>

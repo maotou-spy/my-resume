@@ -56,7 +56,12 @@ export function Hero() {
             <LinkButton href="#contact" variant="primary">
               Get in Touch
             </LinkButton>
-            <LinkButton href={site.resumeUrl} variant="outline" download>
+            <LinkButton
+              href={site.resumeUrl}
+              variant="outline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Download Resume
             </LinkButton>
           </motion.div>

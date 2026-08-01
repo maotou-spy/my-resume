@@ -17,9 +17,15 @@ export function TestRunConsole() {
   const [passedCount, setPassedCount] = useState(0);
 
   useEffect(() => {
-    if (passedCount >= suites.length) return;
-    const timer = setTimeout(() => setPassedCount((c) => c + 1), 650);
-    return () => clearTimeout(timer);
+    // Nếu chưa chạy xong hết các test, tiếp tục chạy từng test sau 650ms
+    if (passedCount < suites.length) {
+      const timer = setTimeout(() => setPassedCount((c) => c + 1), 650);
+      return () => clearTimeout(timer);
+    }
+
+    // Khi đã hoàn thành tất cả (all done), đợi 2000ms (2 giây) rồi reset chạy lại từ đầu
+    const resetTimer = setTimeout(() => setPassedCount(0), 2000);
+    return () => clearTimeout(resetTimer);
   }, [passedCount]);
 
   const allDone = passedCount === suites.length;
